@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "394016105078",
+    "project_id": "munteg-c6bdd",
+    "storage_bucket": "munteg-c6bdd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394016105078:android:019d191ecc7a61ac277557",
+        "android_client_info": {
+          "package_name": "com.example.munteg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394016105078-5e355grarppfcb53b7h64ft25umc5h7h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.munteg",
+            "certificate_hash": "61642917e3bad93960505af0c957d929a44de12b"
+          }
+        },
+        {
+          "client_id": "394016105078-gbpa6bbt5ilfbiocq3jq82ual2giq0dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjrDS9l3V9F0s68pBQF9qp7u54dCpgR8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "394016105078-gbpa6bbt5ilfbiocq3jq82ual2giq0dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
