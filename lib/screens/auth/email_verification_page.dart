@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'home_page.dart';
-import 'storesetup_page.dart';
+import '../setup_store/store_info_screen.dart';
 
 class EmailVerificationPage extends StatefulWidget {
   @override
@@ -66,7 +66,7 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
         if (role == 'store') {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (_) => StoreSetupPage()),
+            MaterialPageRoute(builder: (_) => StoreInfoScreen()),
           );
         } else {
           Navigator.pushReplacement(

@@ -22,6 +22,14 @@
           }
         },
         {
+          "client_id": "394016105078-pjjhmtneh3i24jrk81f0r8ecenb2rm8u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.munteg",
+            "certificate_hash": "e3f6f2b189d86d89b5b87c693147baf558de9f48"
+          }
+        },
+        {
           "client_id": "394016105078-gbpa6bbt5ilfbiocq3jq82ual2giq0dj.apps.googleusercontent.com",
           "client_type": 3
         }

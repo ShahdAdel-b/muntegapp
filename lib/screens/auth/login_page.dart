@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import '../setup_store/store_info_screen.dart';
 import 'role_selection_page.dart';
 import 'home_page.dart';
-import 'storesetup_page.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class LoginPage extends StatefulWidget {
 
@@ -29,6 +29,55 @@ class _LoginPageState extends State<LoginPage> {
   void initState() {
     super.initState();
     loadRole();
+
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) {
+
+      checkCurrentUser();
+    });
+  }
+  Future checkCurrentUser() async {
+
+    final currentUser =
+        FirebaseAuth.instance.currentUser;
+
+    if (currentUser != null) {
+
+      final doc = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(currentUser.uid)
+          .get();
+
+      if (!doc.exists) return;
+
+      final realRole =
+          doc['role'] ?? 'customer';
+
+      if (realRole == "store") {
+
+        final storeCompleted =
+            doc['storeCompleted'] ?? false;
+
+        if (!storeCompleted) {
+
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (_) => const StoreInfoScreen(),
+            ),
+          );
+
+          return;
+        }
+      }
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (_) => HomePage(),
+        ),
+      );
+    }
   }
 
   // ================= LOAD ROLE =================
@@ -139,7 +188,7 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (_) => StoreSetupPage(),
+              builder: (_) => StoreInfoScreen(),
             ),
           );
 

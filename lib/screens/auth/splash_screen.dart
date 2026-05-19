@@ -5,8 +5,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'home_page.dart';
 import 'login_page.dart';
 import 'email_verification_page.dart';
-import 'storesetup_page.dart';
 import 'role_selection_page.dart';
+import '../setup_store/store_info_screen.dart';
 
 class SplashScreen extends StatefulWidget {
 @override
@@ -45,7 +45,7 @@ final role = doc.data()?['role'] ?? 'customer';
 if (role == 'store') {
 Navigator.pushReplacement(
 context,
-MaterialPageRoute(builder: (_) => StoreSetupPage()),
+MaterialPageRoute(builder: (_) => StoreInfoScreen()),
 );
 } else {
 Navigator.pushReplacement(
